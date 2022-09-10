@@ -6,7 +6,7 @@ import slugify from 'slugify'
 export const getStaticProps = async () => {
     const res = await fetch('http://hp-api.herokuapp.com/api/characters')
     const data = await res.json()
-
+    console.log('data', data.slice(0, 3))
     return {
         props: {
             characters: data,

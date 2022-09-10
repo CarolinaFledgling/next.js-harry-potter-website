@@ -8,7 +8,9 @@ export const getStaticPaths = async () => {
 
 
     const paths = data.map(character => {
-        return { params: { slug: slugify(character.name).toLowerCase() } }
+        return {
+            params: { slug: slugify(character.name).toLowerCase() }
+        }
     })
 
     console.log('paths', paths)
