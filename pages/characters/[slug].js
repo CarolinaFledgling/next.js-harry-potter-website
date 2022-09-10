@@ -3,13 +3,20 @@ import slugify from 'slugify'
 
 export const getStaticPaths = async () => {
 
-    const res = await fetch('http://hp-api.herokuapp.com/api/characters')
-    const data = res.json()
+    const res = await fetch('http://hp-api.herokuapp.com/api/characters', {
+        headers: {
+            Accept: 'application/json, text/plain, */*',
+            'User-Agent': '*',
+        },
+    })
+
+    const data = await res.json()
 
 
     const paths = data.map(character => {
         return {
-            params: { slug: slugify(character.name).toLowerCase() }
+            params:
+                { slug: slugify(character.name).toLowerCase() }
         }
     })
 
