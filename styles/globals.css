@@ -40,3 +40,32 @@ nav .logo {
 h2 {
   margin: 0;
 }
+
+/* Not found page */
+
+.main-notFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fof h3 {
+  font-size: 25px;
+  padding-right: 12px;
+  animation: type 0.5s alternate infinite;
+}
+
+@keyframes type {
+  from {
+    box-shadow: inset -3px 0px 0px #888;
+  }
+  to {
+    box-shadow: inset -3px 0px 0px transparent;
+  }
+}
